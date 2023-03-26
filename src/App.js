@@ -1,13 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import { Keys } from '@rust-nostr/nostr';
 
 function App() {
+  let keys = Keys.generate();
+  let hex = keys.publicKey.toHex();
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {hex}
         </p>
         <a
           className="App-link"
